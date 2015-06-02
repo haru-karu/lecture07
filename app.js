@@ -7,8 +7,18 @@ navigator.getUserMedia =
     preview: document.querySelector("video"),
    shoot: document.querySelector("#shoot"),
    canvas: document.querySelector("canvas"),
+   sliderX: document.querySelector("#width"),
+   sliderY: document.querySelector("#height"),
     stream: null
   };
+
+function updateMosaicSize(){
+    givenWidth = Number(app.sliderX.value);
+    givenHeight = Number(app.sliderY.value);
+  };
+  var updateMosaicSizeButton = document.querySelector("#shoot+");
+  UpdateMosaicSizeButton.addEventListner("click",
+                  onUpdateMosaicSizeButtonClicked);
 
 var MEDIA_CONSTRAINT = {
   video: true,
